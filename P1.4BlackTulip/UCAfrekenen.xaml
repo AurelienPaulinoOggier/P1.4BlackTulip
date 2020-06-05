@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="P1._4BlackTulip.UCAfrekenen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:P1._4BlackTulip"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="GridAfrekenen" Width="758" Height="369" Background="#FFF9EAEA">
+        <DataGrid x:Name="dgProducten" HorizontalAlignment="Right" Height="311" Margin="0,48,10,0" VerticalAlignment="Top" Width="303" AutoGenerateColumns="False" CanUserAddRows="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding product.product_naam}" ClipboardContentBinding="{x:Null}" Header="product" />
+                <DataGridTextColumn Binding="{Binding bestelling.datum }" ClipboardContentBinding="{x:Null}" Header="Datum" />
+                <DataGridTextColumn Binding="{Binding item.hoeveelheid}" ClipboardContentBinding="{x:Null}" Header="Aantal" />
+                <DataGridTextColumn Binding="{Binding item.hoeveelheid}" ClipboardContentBinding="{x:Null}" Header="Totaal" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dgklanten" HorizontalAlignment="Left" Height="317" Margin="10,48,0,0" VerticalAlignment="Top" Width="246" AutoGenerateColumns="False" CanUserAddRows="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding naam}" ClipboardContentBinding="{x:Null}" Header="Klant" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBox x:Name="txtZoeken" HorizontalAlignment="Left" Height="23" Margin="10,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175"/>
+        <Button x:Name="btnZoeken" Content="Zoeken" HorizontalAlignment="Left" Margin="189,10,0,0" VerticalAlignment="Top" Width="67" Height="35" Click="btnZoeken_Click"/>
+        <TextBox x:Name="txtZoekenB" HorizontalAlignment="Left" Height="23" Margin="445,14,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="232"/>
+        <Button x:Name="btnZoekenB" Content="Zoeken" Height="35" HorizontalAlignment="Left" Margin="682,8,0,0" VerticalAlignment="Top" Width="67" Click="btnZoekenB_Click"/>
+    </Grid>
+</UserControl>

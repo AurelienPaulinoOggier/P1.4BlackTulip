@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BlackTulipDB">
+  <DataContextMoniker Name="/BlackTulipDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f3b404e9-2b2f-4b32-9f49-3dabd4943b95" absoluteBounds="2.125, 3.125, 2, 1.3862939453125">
+      <DataClassMoniker Name="/BlackTulipDBDataContext/bestelling" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6527028a-41a3-4a8d-a3a1-3f6651116bee" absoluteBounds="2.14, 3.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8bb98b7f-547d-4bbf-979f-e9c0559f60a7" absoluteBounds="3.375, 5.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BlackTulipDBDataContext/item" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d82f74cd-559a-42d8-9d2f-a09d1adc5c3e" absoluteBounds="3.3900000000000006, 5.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0c768080-2efa-4318-ad18-af03d9eab57e" absoluteBounds="0.5, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BlackTulipDBDataContext/klant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="910f8047-91fb-4534-9be2-dfa3c78dc641" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e02ae073-2cda-4588-8c6f-efa63d24b35c" absoluteBounds="5.125, 2.875, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/BlackTulipDBDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc98c1b7-6b37-4cc5-aee6-dc570cf7b864" absoluteBounds="5.14, 3.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cacfbe36-9c96-48ec-9694-6032df4f24e3" absoluteBounds="6.5, 1, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/BlackTulipDBDataContext/producttype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c99a0330-4e43-4fc7-b146-36195b41c6ac" absoluteBounds="6.5150000000000006, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.3125 : 2.52089680989583); (2.3125 : 3.125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlackTulipDBDataContext/klant/klant_bestelling" />
+      <nodes>
+        <classShapeMoniker Id="0c768080-2efa-4318-ad18-af03d9eab57e" />
+        <classShapeMoniker Id="f3b404e9-2b2f-4b32-9f49-3dabd4943b95" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.75 : 4.5112939453125); (3.75 : 5.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlackTulipDBDataContext/bestelling/bestelling_item" />
+      <nodes>
+        <classShapeMoniker Id="f3b404e9-2b2f-4b32-9f49-3dabd4943b95" />
+        <classShapeMoniker Id="8bb98b7f-547d-4bbf-979f-e9c0559f60a7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.6562495 : 5.375); (4.6562495 : 2.96875); (5.125 : 2.96875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlackTulipDBDataContext/item/item_product" />
+      <nodes>
+        <classShapeMoniker Id="8bb98b7f-547d-4bbf-979f-e9c0559f60a7" />
+        <classShapeMoniker Id="e02ae073-2cda-4588-8c6f-efa63d24b35c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.8125 : 2.19399251302083); (6.8125 : 2.875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/BlackTulipDBDataContext/producttype/producttype_product" />
+      <nodes>
+        <classShapeMoniker Id="cacfbe36-9c96-48ec-9694-6032df4f24e3" />
+        <classShapeMoniker Id="e02ae073-2cda-4588-8c6f-efa63d24b35c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.2500005 : 4.64589680989583); (6.2500005 : 6.16429768880208); (5.375 : 6.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlackTulipDBDataContext/product/product_item" />
+      <nodes>
+        <classShapeMoniker Id="e02ae073-2cda-4588-8c6f-efa63d24b35c" />
+        <classShapeMoniker Id="8bb98b7f-547d-4bbf-979f-e9c0559f60a7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

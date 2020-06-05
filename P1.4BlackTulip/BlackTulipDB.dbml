@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BlackTulipDB" Class="BlackTulipDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-BHRET4JP\SQLEXPRESS;Initial Catalog=BlackTulipDB;Integrated Security=True" SettingsObjectName="P1._4BlackTulip.Properties.Settings" SettingsPropertyName="BlackTulipDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.bestelling" Member="bestellings">
+    <Type Name="bestelling">
+      <Column Name="bid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="datum" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="kid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="bestelling_item" Member="items" ThisKey="bid" OtherKey="bid" Type="item" />
+      <Association Name="klant_bestelling" Member="klant" ThisKey="kid" OtherKey="kid" Type="klant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.item" Member="items">
+    <Type Name="item">
+      <Column Name="oid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="hoeveelheid" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="bid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="pid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="item_product" Member="products" ThisKey="pid" OtherKey="pid" Type="product" />
+      <Association Name="bestelling_item" Member="bestelling" ThisKey="bid" OtherKey="bid" Type="bestelling" IsForeignKey="true" />
+      <Association Name="product_item" Member="product" ThisKey="pid" OtherKey="pid" Type="product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.klant" Member="klants">
+    <Type Name="klant">
+      <Column Name="kid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="naam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="stad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="mobielenummer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[e-mail]" Member="e_mail" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="klant_bestelling" Member="bestellings" ThisKey="kid" OtherKey="kid" Type="bestelling" />
+    </Type>
+  </Table>
+  <Table Name="dbo.product" Member="products">
+    <Type Name="product">
+      <Column Name="pid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="product_naam" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ptid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="prijs" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="afbeelding" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="product_item" Member="items" ThisKey="pid" OtherKey="pid" Type="item" />
+      <Association Name="item_product" Member="item" ThisKey="pid" OtherKey="pid" Type="item" IsForeignKey="true" />
+      <Association Name="producttype_product" Member="producttype" ThisKey="ptid" OtherKey="ptid" Type="producttype" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.producttype" Member="producttypes">
+    <Type Name="producttype">
+      <Column Name="ptid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="omschrijving" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="producttype_product" Member="products" ThisKey="ptid" OtherKey="ptid" Type="product" />
+    </Type>
+  </Table>
+</Database>

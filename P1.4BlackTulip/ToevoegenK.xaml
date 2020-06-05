@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="P1._4BlackTulip.ToevoegenK"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:P1._4BlackTulip"
+             mc:Ignorable="d" 
+             d:DesignHeight="309" d:DesignWidth="196">
+    <Grid Width="196" Height="309" Background="#FFF9EAEA">
+        <TextBox x:Name="txtNaam" HorizontalAlignment="Center" Height="23" Margin="0,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtStad" HorizontalAlignment="Center" Height="23" Margin="0,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtMob" HorizontalAlignment="Center" Height="23" Margin="0,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Center" Height="23" Margin="0,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" RenderTransformOrigin="0.5,1"/>
+        <Button x:Name="Update" Content="Update" HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Bottom" Width="137" Height="23" Click="btnUpdate_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Text="Klant Naam" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,75,0,0" TextWrapping="Wrap" Text="Stad" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,125,0,0" TextWrapping="Wrap" Text="Mobielenummer" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,175,0,0" TextWrapping="Wrap" Text="e-mail" VerticalAlignment="Top"/>
+    </Grid>
+</UserControl>
